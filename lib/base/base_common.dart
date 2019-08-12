@@ -58,29 +58,39 @@ abstract class BaseCommon {
   Widget buildErrorWidget() {
     return Offstage(
       offstage: !_isShowError,
-      child: BaseConfig.errorWidget ??
-          Center(
-            child: Icon(
-              Icons.import_contacts,
-              size: 60,
+      child: InkWell(
+        onTap: clickError(),
+        child: BaseConfig.errorWidget ??
+            Center(
+              child: Icon(
+                Icons.import_contacts,
+                size: 60,
+              ),
             ),
-          ),
+      ),
     );
   }
+
+  clickError() {}
 
   ///空页面
   Widget buildEmptyWidget() {
     return Offstage(
       offstage: !_isShowEmpty,
-      child: BaseConfig.emptyWidget ??
-          Center(
-            child: Icon(
-              Icons.assignment,
-              size: 60,
+      child: InkWell(
+        onTap: clickEmpty(),
+        child: BaseConfig.emptyWidget ??
+            Center(
+              child: Icon(
+                Icons.assignment,
+                size: 60,
+              ),
             ),
-          ),
+      ),
     );
   }
+
+  clickEmpty() {}
 
   /// 展示错误页面
   setErrorVisible(bool isVisible) {
@@ -121,6 +131,4 @@ abstract class BaseCommon {
   double getScreenHeight() {
     return MediaQuery.of(_context).size.height;
   }
-
-
 }
