@@ -59,7 +59,7 @@ abstract class BaseCommon {
     return Offstage(
       offstage: !_isShowError,
       child: InkWell(
-        onTap: clickError(),
+        onTap: clickError,
         child: BaseConfig.errorWidget ??
             Center(
               child: Icon(
@@ -71,14 +71,14 @@ abstract class BaseCommon {
     );
   }
 
-  clickError() {}
+  void clickError() {}
 
   ///空页面
   Widget buildEmptyWidget() {
     return Offstage(
       offstage: !_isShowEmpty,
       child: InkWell(
-        onTap: clickEmpty(),
+        onTap: clickEmpty,
         child: BaseConfig.emptyWidget ??
             Center(
               child: Icon(
@@ -90,7 +90,7 @@ abstract class BaseCommon {
     );
   }
 
-  clickEmpty() {}
+  void clickEmpty() {}
 
   /// 展示错误页面
   setErrorVisible(bool isVisible) {
