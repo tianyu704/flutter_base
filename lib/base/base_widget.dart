@@ -7,7 +7,7 @@ import 'base_common.dart';
 /// Create by Hugo.Guo
 /// Date: 2019-08-12
 ///
-abstract class BaseWidgetState extends LifecycleState<StatefulWidget>
+abstract class BaseWidgetState<T extends StatefulWidget> extends LifecycleState<T>
     with BaseCommon {
   @override
   void onCreate() {
