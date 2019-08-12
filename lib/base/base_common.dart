@@ -21,7 +21,7 @@ abstract class BaseCommon {
     this._context = context;
   }
 
-  Widget buildWidget();
+  Widget buildWidget(BuildContext context);
 
   /// 显示加载框
   showLoading() {
