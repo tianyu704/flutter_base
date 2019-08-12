@@ -1,7 +1,5 @@
 library flutter_base;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'base/base_widget.dart';
+export 'base/base_common.dart';
+export 'base/base_config.dart';
