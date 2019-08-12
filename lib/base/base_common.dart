@@ -47,7 +47,7 @@ abstract class BaseCommon {
   Widget getBaseView(BuildContext context) {
     return Stack(
       children: <Widget>[
-        buildWidget(),
+        buildWidget(context),
         buildErrorWidget(),
         buildEmptyWidget(),
       ],
