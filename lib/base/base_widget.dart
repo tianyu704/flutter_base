@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lifecycle_state/lifecycle_state.dart';
-import 'base_config.dart';
+import 'package:flutter_base/base/base_config.dart';
 import 'base_common.dart';
 
 ///

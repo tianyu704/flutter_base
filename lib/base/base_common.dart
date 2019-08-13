@@ -1,7 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_dialog/loading_dialog.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'base_config.dart';
+import 'package:flutter_base/base/base_config.dart';
 import 'base_widget.dart';
 
 ///
@@ -15,6 +16,8 @@ abstract class BaseCommon {
 
   bool _isShowError = false;
   bool _isShowEmpty = false;
+  Color errorBackground = BaseConfig.errorBackgroundColor;
+  Color emptyBackground = BaseConfig.emptyBackgroundColor;
 
   void init(BaseWidgetState baseWidgetState, BuildContext context) {
     this._baseWidgetState = baseWidgetState;
@@ -61,10 +64,13 @@ abstract class BaseCommon {
       child: InkWell(
         onTap: clickError,
         child: BaseConfig.errorWidget ??
-            Center(
-              child: Icon(
-                Icons.import_contacts,
-                size: 60,
+            Container(
+              color: errorBackground,
+              child: Center(
+                child: Icon(
+                  Icons.import_contacts,
+                  size: 60,
+                ),
               ),
             ),
       ),
@@ -80,10 +86,13 @@ abstract class BaseCommon {
       child: InkWell(
         onTap: clickEmpty,
         child: BaseConfig.emptyWidget ??
-            Center(
-              child: Icon(
-                Icons.assignment,
-                size: 60,
+            Container(
+              color: errorBackground,
+              child: Center(
+                child: Icon(
+                  CupertinoIcons.paw,
+                  size: 60,
+                ),
               ),
             ),
       ),
